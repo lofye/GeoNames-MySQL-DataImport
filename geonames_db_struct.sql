@@ -3,7 +3,7 @@
 -- USE geonames;
 
 -- Create syntax for TABLE 'admin1CodesAscii'
-CREATE TABLE `admin1_codes_ascii` (
+CREATE TABLE `admin1_codes` (
   `code` char(15) DEFAULT NULL,
   `name` text,
   `name_ascii` text,
@@ -27,7 +27,7 @@ CREATE TABLE `admin2_codes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'alternatename'
-CREATE TABLE `alternate_name` (
+CREATE TABLE `alternate_names` (
   `alternate_name_id` int(11) NOT NULL,
   `geo_name_id` int(11) DEFAULT NULL,
   `iso_language` varchar(7) DEFAULT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `alternate_name` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'continentCodes'
-CREATE TABLE `continent_codes` (
+CREATE TABLE `continents` (
   `code` char(2) DEFAULT NULL,
   `name` varchar(20) DEFAULT NULL,
   `geo_name_id` int(11) DEFAULT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE `continent_codes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'countryinfo'
-CREATE TABLE `country_info` (
+CREATE TABLE `countries` (
   `iso_alpha2` char(2) DEFAULT NULL,
   `iso_alpha3` char(3) DEFAULT NULL,
   `iso_numeric` int(11) DEFAULT NULL,
@@ -90,7 +90,7 @@ CREATE TABLE `feature_codes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'geoname'
-CREATE TABLE `geo_name` (
+CREATE TABLE `geo_names` (
   `geo_name_id` int(11) NOT NULL,
   `name` varchar(200) DEFAULT NULL,
   `ascii_name` varchar(200) DEFAULT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE `geo_name` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'hierarchy'
-CREATE TABLE `hierarchy` (
+CREATE TABLE `hierarchies` (
   `parent_id` int(11) DEFAULT NULL,
   `child_id` int(11) DEFAULT NULL,
   `type` varchar(50) DEFAULT NULL,
@@ -135,7 +135,7 @@ CREATE TABLE `hierarchy` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'iso_languagecodes'
-CREATE TABLE `iso_language_codes` (
+CREATE TABLE `language_codes` (
   `iso_639_3` char(4) DEFAULT NULL,
   `iso_639_2` varchar(50) DEFAULT NULL,
   `iso_639_1` varchar(50) DEFAULT NULL,
