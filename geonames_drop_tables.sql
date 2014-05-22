@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS geo_names;
+DROP TABLE IF EXISTS alternate_names;
+DROP TABLE IF EXISTS countries;
+DROP TABLE IF EXISTS language_codes;
+DROP TABLE IF EXISTS admin1_codes;
+DROP TABLE IF EXISTS admin2_codes;
+DROP TABLE IF EXISTS hierarchies;
+DROP TABLE IF EXISTS feature_codes;
+DROP TABLE IF EXISTS timezones;
+DROP TABLE IF EXISTS continents;
+DROP TABLE IF EXISTS post_codes;
