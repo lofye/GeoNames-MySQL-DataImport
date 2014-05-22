@@ -36,7 +36,7 @@ CREATE TABLE `alternate_names` (
   `is_short_name` tinyint(1) DEFAULT NULL,
   `is_colloquial` tinyint(1) DEFAULT NULL,
   `is_historic` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`alternatename_id`),
+  PRIMARY KEY (`alternate_name_id`),
   KEY `geo_name_id` (`geo_name_id`),
   KEY `iso_language` (`iso_language`),
   KEY `alternate_name` (`alternate_name`)
