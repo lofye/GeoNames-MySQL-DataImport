@@ -24,6 +24,7 @@ usage() {
     echo "    create-db Creates the mysql database structure with no data."
     echo "    import-tables Creates the mysql tables in an existing database."
     echo "    import-dumps Imports geonames data into db. A database is previously needed for this to work."
+echo "    drop-tables Drops only the geonames tables."
 	echo "    drop-db Removes the db completely."
     echo "    truncate-db Removes geonames data from db."
     echo
@@ -127,6 +128,11 @@ case "$action" in
     import-dumps)
         echo "Importing geonames dumps into database $dbname"
         mysql -h $dbhost -P $dbport -u $dbusername -p$dbpassword --local-infile=1 $dbname < $dir/geonames_import_data.sql
+    ;;    
+    
+    drop-tables)
+        echo "Dropping \"geonames\" tables"
+        mysql -h $dbhost -P $dbport -u $dbusername -p$dbpassword $dbname < $dir/geonames_drop_tables.sql
     ;;    
     
     drop-db)
