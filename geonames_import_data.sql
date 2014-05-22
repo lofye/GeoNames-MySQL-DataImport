@@ -1,7 +1,7 @@
 LOAD DATA LOCAL INFILE 'allCountries.txt'
 INTO TABLE geo_names
 CHARACTER SET 'UTF8'
-(geo_name_id, name, ascii_name, alternate_names, latitude, longitude, fclass, fcode, country, cc2, admin1, admin2, admin3, admin4, population, elevation, gtopo30, timezone, moddate);
+(geo_name_id, name, ascii_name, alternate_names, latitude, longitude, fclass, fcode, country, cc2, admin1, admin2, admin3, admin4, population, elevation, gtopo30, timezone, mod_date);
 
 LOAD DATA LOCAL INFILE 'alternateNames.txt'
 INTO TABLE alternate_names
