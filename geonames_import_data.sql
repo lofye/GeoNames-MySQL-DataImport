@@ -1,58 +1,58 @@
 LOAD DATA LOCAL INFILE 'allCountries.txt'
-INTO TABLE geoname
+INTO TABLE geo_names
 CHARACTER SET 'UTF8'
-(geonameid, name, asciiname, alternatenames, latitude, longitude, fclass, fcode, country, cc2, admin1, admin2, admin3, admin4, population, elevation, gtopo30, timezone, moddate);
+(geo_name_id, name, ascii_name, alternate_names, latitude, longitude, fclass, fcode, country, cc2, admin1, admin2, admin3, admin4, population, elevation, gtopo30, timezone, moddate);
 
 LOAD DATA LOCAL INFILE 'alternateNames.txt'
-INTO TABLE alternatename
+INTO TABLE alternate_names
 CHARACTER SET 'UTF8'
-(alternatenameid, geonameid, isoLanguage, alternateName, isPreferredName, isShortName, isColloquial, isHistoric);
+(alternate_name_id, geo_name_id, iso_language, alternate_name, is_preferred_name, is_short_name, is_colloquial, is_historic);
 
 LOAD DATA LOCAL INFILE 'iso-languagecodes.txt'
-INTO TABLE iso_languagecodes
+INTO TABLE language_codes
 CHARACTER SET 'UTF8'
 IGNORE 1 LINES
 (iso_639_3, iso_639_2, iso_639_1, language_name);
 
 LOAD DATA LOCAL INFILE 'admin1CodesASCII.txt'
-INTO TABLE admin1CodesAscii
+INTO TABLE admin1_codes
 CHARACTER SET 'UTF8'
-(code, name, nameAscii, geonameid);
+(code, name, name_ascii, geo_name_id);
 
 LOAD DATA LOCAL INFILE 'admin2Codes.txt'
-INTO TABLE admin2Codes
+INTO TABLE admin2_codes
 CHARACTER SET 'UTF8'
-(code, name, nameAscii, geonameid);
+(code, name, name_ascii, geo_name_id);
 
 LOAD DATA LOCAL INFILE 'hierarchy.txt'
-INTO TABLE hierarchy
+INTO TABLE hierarchies
 CHARACTER SET 'UTF8'
-(parentId, childId, type);
+(parent_id, child_id, type);
 
 LOAD DATA LOCAL INFILE 'featureCodes_en.txt'
-INTO TABLE featureCodes
+INTO TABLE feature_codes
 CHARACTER SET 'UTF8'
 (code, name, description);
 
 LOAD DATA LOCAL INFILE 'timeZones.txt'
-INTO TABLE timeZones
+INTO TABLE timezones
 CHARACTER SET 'UTF8'
 IGNORE 1 LINES
-(timeZoneId, GMT_offset, DST_offset);
+(timezone_id, gmt_offset, dst_offset);
 
 LOAD DATA LOCAL INFILE 'countryInfo.txt'
-INTO TABLE countryinfo
+INTO TABLE countries
 CHARACTER SET 'UTF8'
 IGNORE 51 LINES
-(iso_alpha2, iso_alpha3, iso_numeric, fips_code, name, capital, areaInSqKm, population, continent, tld, currency, currencyName, phone, postalCodeFormat, postalCodeRegex, languages, geonameid, neighbours, equivalentFipsCode);
+(iso_alpha2, iso_alpha3, iso_numeric, fips_code, name, capital, area_in_sqkm, population, continent, tld, currency, currency_name, phone, post_code_format, post_code_regex, languages, geo_name_id, neighbours, equivalent_fips_code);
 
 LOAD DATA LOCAL INFILE 'continentCodes.txt'
-INTO TABLE continentCodes
+INTO TABLE continents
 CHARACTER SET 'UTF8'
 FIELDS TERMINATED BY ','
-(code, name, geonameId);
+(code, name, geo_name_id);
 
 LOAD DATA LOCAL INFILE 'zip/allCountries.txt'
-INTO TABLE postalCodes
+INTO TABLE post_codes
 CHARACTER SET 'UTF8'
-(country, postal_code, name, admin1_name, admin1_code, admin2_name, admin2_code, admin3_name, admin3_code, latitude, longitude, accuracy)
+(country, post_code, name, admin1_name, admin1_code, admin2_name, admin2_code, admin3_name, admin3_code, latitude, longitude, accuracy)
