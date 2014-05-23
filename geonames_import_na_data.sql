@@ -60,10 +60,10 @@ FIELDS TERMINATED BY ','
 LOAD DATA LOCAL INFILE 'zip/CA.txt'
 INTO TABLE post_codes
 CHARACTER SET 'UTF8'
-(country, post_code, name, admin1_name, admin1_code, admin2_name, admin2_code, admin3_name, admin3_code, latitude, longitude, accuracy)
+(`country`, `post_code`, `name`, `admin1_name`, `admin1_code`, `admin2_name`, `admin2_code`, `admin3_name`, `admin3_code`, `latitude`, `longitude`, `accuracy`)
 
 
 LOAD DATA LOCAL INFILE 'zip/US.txt'
 INTO TABLE post_codes
 CHARACTER SET 'UTF8'
-(country, post_code, name, admin1_name, admin1_code, admin2_name, admin2_code, admin3_name, admin3_code, latitude, longitude, accuracy)
+(`country`, `post_code`, `name`, `admin1_name`, `admin1_code`, `admin2_name`, `admin2_code`, `admin3_name`, `admin3_code`, `latitude`, `longitude`, `accuracy`)
