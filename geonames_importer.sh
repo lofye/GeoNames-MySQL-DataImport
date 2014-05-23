@@ -41,6 +41,8 @@ echo "    drop-tables Drops only the geonames tables."
 download_geonames_data() {
 	echo "Downloading GeoNames.org data..." 
 	wget http://download.geonames.org/export/dump/allCountries.zip
+	wget http://download.geonames.org/export/dump/CA.zip
+	wget http://download.geonames.org/export/dump/US.zip	
 	wget http://download.geonames.org/export/dump/alternateNames.zip
 	wget http://download.geonames.org/export/dump/hierarchy.zip
 	wget http://download.geonames.org/export/dump/admin1CodesASCII.txt
@@ -49,10 +51,16 @@ download_geonames_data() {
 	wget http://download.geonames.org/export/dump/timeZones.txt
 	wget http://download.geonames.org/export/dump/countryInfo.txt
 	wget -O allCountries_zip.zip http://download.geonames.org/export/zip/allCountries.zip
+	wget -O CA_zip.zip http://download.geonames.org/export/zip/CA.zip
+	wget -O US_zip.zip http://download.geonames.org/export/zip/US.zip	
 	unzip allCountries.zip
+	unzip CA.zip
+	unzip US.zip	
 	unzip alternateNames.zip
 	unzip hierarchy.zip
 	unzip allCountries_zip.zip -d ./zip/
+	unzip CA_zip.zip -d ./zip/
+	unzip US_zip.zip -d ./zip/	
 	rm allCountries.zip
 	rm alternateNames.zip
 	rm hierarchy.zip
@@ -129,6 +137,11 @@ case "$action" in
         echo "Importing geonames dumps into database $dbname"
         mysql -h $dbhost -P $dbport -u $dbusername -p$dbpassword --local-infile=1 $dbname < $dir/geonames_import_data.sql
     ;;    
+    
+    import-na)
+        echo "Importing North American dumps into database $dbname"
+        mysql -h $dbhost -P $dbport -u $dbusername -p$dbpassword --local-infile=1 $dbname < $dir/geonames_import_na_data.sql
+    ;;      
     
     drop-tables)
         echo "Dropping \"geonames\" tables"
