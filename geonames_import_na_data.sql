@@ -20,6 +20,6 @@ LOAD DATA LOCAL INFILE 'countryInfo.txt' INTO TABLE countries CHARACTER SET 'UTF
 
 LOAD DATA LOCAL INFILE 'continentCodes.txt' INTO TABLE continents CHARACTER SET 'UTF8' FIELDS TERMINATED BY ',' (code, name, geo_name_id);
 
-LOAD DATA LOCAL INFILE 'zip/CA.txt' INTO TABLE post_codes CHARACTER SET 'UTF8' (`country`, `post_code`, `name`, `admin1_name`, `admin1_code`, `admin2_name`, `admin2_code`, `admin3_name`, `admin3_code`, `latitude`, `longitude`, `accuracy`)
+LOAD DATA LOCAL INFILE 'zip/CA.txt' INTO TABLE post_codes CHARACTER SET 'UTF8' (`country`, `post_code`, `name`, `admin1_name`, `admin1_code`, `admin2_name`, `admin2_code`, `admin3_name`, `admin3_code`, `latitude`, `longitude`, `accuracy`);
 
-LOAD DATA LOCAL INFILE 'zip/US.txt' INTO TABLE post_codes CHARACTER SET 'UTF8' (`country`, `post_code`, `name`, `admin1_name`, `admin1_code`, `admin2_name`, `admin2_code`, `admin3_name`, `admin3_code`, `latitude`, `longitude`, `accuracy`)
+LOAD DATA LOCAL INFILE 'zip/US.txt' INTO TABLE post_codes CHARACTER SET 'UTF8' (`country`, `post_code`, `name`, `admin1_name`, `admin1_code`, `admin2_name`, `admin2_code`, `admin3_name`, `admin3_code`, `latitude`, `longitude`, `accuracy`);
